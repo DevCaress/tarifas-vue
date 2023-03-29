@@ -5,31 +5,31 @@ import InfoServices from "@/components/InfoServices.vue";
 const mediaCaress = [
     {
         name: "carresTikTok",
-        img: "../assets/media/tiktok.svg",
+        img: "tiktok",
         followers: "90k",
         engagement: {
             status: true,
             porcent: 7.07,
             }
     },{
-        name: "carreIinstagram",
-        img: "../assets/media/instagram.svg",
+        name: "caressInstagram",
+        img: "instagram",
         followers: "4.2k",
         engagement: {
             status: true,
             porcent: 2.16,
             }
     },{
-        name: "carresFacebook",
-        img: "../assets/media/facebook.svg",
+        name: "caressFacebook",
+        img: "facebook",
         followers: "7.3k",
         engagement: {
             status: true,
             porcent: 0.65,
     },
     },{
-        name: "careessTwitch",
-        img: "../assets/media/twitch.svg",
+        name: "caressTwitch",
+        img: "twitch",
         followers: "728",
         engagement: {
             status: true,
@@ -41,7 +41,7 @@ const mediaCaress = [
 const mediaNogara = [
 {
         name:'nogaraYoutube',
-        img: '../assets/media/youtube.svg',
+        img: 'youtube',
         followers: '2.2k',
         engagement :{
             status:false,
@@ -49,7 +49,7 @@ const mediaNogara = [
         }
     },{
         name:'nogaraFacebook',
-        img: '../assets/media/facebook.svg',
+        img: 'facebook',
         followers:'29.5k',
         engagement :{
             status:false,
@@ -57,7 +57,7 @@ const mediaNogara = [
         }
     },{
         name:'nogaraInstagram',
-        img: '../assets/media/instagram.svg',
+        img: 'instagram',
         followers:'1.4k',
         engagement :{
             status:false,
@@ -66,7 +66,7 @@ const mediaNogara = [
     },
 ]
 
-console.log(window.screen)
+// console.log(window.screen)
 </script>
 
 <template>
@@ -82,23 +82,29 @@ console.log(window.screen)
       </div>
       <div class="container-media-caress">
         <Media
-        v-for="media in mediaCaress" :key="media.name"
+        v-for="media in mediaCaress" 
+        :key="media.name"
         :followers="media.followers"
         :img="media.img"
-        ><span>{{ media.engagement.porcent }}</span></Media>
+        >
+          <span>{{ media.engagement.porcent }}</span>
+        </Media>
       </div>
     </div>
+
     <div class="container-media-nogara">
       <h2>@NogaraDevCode</h2>
       <div class="followers-nogara">
         <Media
-        v-for="media in mediaNogara" :key="media.name"
+        v-for="media in mediaNogara" 
+        :key="media.name"
         :followers="media.followers"
         :img="media.img"
         ></Media>
       </div>
     </div>
   </section>
+
   <section class="container-tarifas">
     <div class="cardOne">
 
@@ -166,6 +172,7 @@ console.log(window.screen)
   color: #eceff1;
   font-size: 1.5em;
   display: grid;
+  padding-bottom: 50px;
 }
 
 .container-caress{
@@ -330,6 +337,8 @@ div.container-media-caress{
 .container-media-nogara{
   width: 100%;
   display: flex;
+  align-items: center;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -376,6 +385,8 @@ div.container-media-caress{
 .container-media-nogara{
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 
