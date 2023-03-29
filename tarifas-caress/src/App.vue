@@ -1,24 +1,22 @@
 <script setup>
-  import FormUsers from './components/FormUsers.vue';
   import {userStore} from './store/user.js'
   import { RouterView , RouterLink} from 'vue-router';
   const user = userStore()
   const superUser = 'xhKPq6Yc9SSgbabjKm6fFQXWIau2'
 
-  const screen = window.screen.width
 </script>
 
 
 <template>
-  <header class="header">
-    <div class="container-nav" v-if="user.userData "> 
+  <header class="header" v-if="user.userData">
+    <div class="container-nav" v-if="user.userData.uid === superUser"> 
       <div class="logo">
         <img src="./assets/media/dc_marca_sn_1200.png" alt="">
       </div>
       <nav class="nav-content">
         <div class="nav-links">
           <div><RouterLink to='/'>Home</RouterLink></div>
-          <div><RouterLink to='/register' v-if="user.userData.uid === superUser">Registrar</RouterLink></div>
+          <div><RouterLink to='/register'>Registrar</RouterLink></div>
           <button class="btn" @click="user.logOutUser">Logout</button>
         </div>
       </nav>
@@ -30,7 +28,6 @@
 <style >
 body{
   margin: 0;
-  padding: 2em 30em;
   box-sizing: content-box;
   font-family: monospace;
   background-color: #898989;
@@ -111,16 +108,13 @@ body{
     transform: scale(1.1);
 }
 
-@media  screen and  (max-width:1780px) {
+@media screen and (min-width:1280px){
   body{
-    padding: 2em 10em;
+    width: 1280px;
+    margin: auto;
   }
 }
-@media  screen and  (max-width:649px) {
-  body{
-    padding: 1em .5em;
-  }
-}
+
 @media  screen and  (max-width:900px) {
   .logo{
     display: none;
@@ -133,22 +127,20 @@ body{
   }
 }
 @media  screen and  (max-width:710px) {
-  .header{
-    background-color: #020202;
-  
-  }
   .container-nav{
     width: auto;
     height: 80px; 
     position: relative;
     
   }
-  
+}
+@media  screen and  (max-width:460px) {
   .nav-content{
     position: absolute;
-    left: 0;
   }
 
 }
+
+
 
 </style>

@@ -306,7 +306,7 @@ div.container-media-nogara{
 
 
 }
-@media screen and (min-width: 650px) and (max-width:1050px){
+@media screen and (min-width: 650px) and (max-width:1049px){
 .header-container{
   grid-template-columns:  100%;
   justify-items: center;
@@ -349,7 +349,7 @@ footer{
   font-size: 15.5px;
 }
 }
-@media screen and (max-width:649px){
+@media screen  and (min-width: 100px) and (max-width:649px){
 .header-container{
   grid-template-columns:  100%;
   justify-items: center;
