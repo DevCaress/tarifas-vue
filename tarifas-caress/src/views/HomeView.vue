@@ -65,6 +65,8 @@ const mediaNogara = [
         }
     },
 ]
+
+console.log(window.screen)
 </script>
 
 <template>
@@ -150,7 +152,7 @@ const mediaNogara = [
         </div>
         <div>
           <img src="../assets/media/envelope-regular.svg" alt="">
-            <span>devcarress@gmail.com</span>
+            <span>devcaress@gmail.com</span>
         </div>
       </footer>
     </section>
@@ -160,90 +162,45 @@ const mediaNogara = [
 <style>
 
 .header-container{
-  background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,11,121,0.8799894957983193) 24%, rgba(0,212,255,1) 100%);
-  display: grid;
-  grid-template-columns: 20% 40% 40%;
   color: #eceff1;
   font-size: 1.5em;
+  display: grid;
 }
 
 .container-caress{
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(3,1fr);
-  
 }
-
-.container-caress > div{
-  grid-column: 1/3;
-  justify-self: center;
-  align-self: center;
+.logoCaress{
+  width: 200px;
+  height: 200px;
+  padding: 50px 25px;
 }
-
-.container-caress > div > h2{
-  text-align: center;
-}
-
-div.container-subtitles{
-  width: 500px;
-  display: flex;
-  justify-content: space-around;
-
-}
-div.container-media-caress{
-  grid-column: 1/3;
-  grid-row: 2/4;
-  justify-self:unset;
-
-}
-
 div.container-media-caress > div{
   display: flex;
   justify-content: space-around;
 }
-
-
-.logoCaress{
-  width: 200px;
-  height: 200px;
- padding: 50px 25px;
+div.container-subtitles{
+  display: flex;
+  justify-content: space-around;
 }
-
-/* .container-media-nogara > div{
-
-} */
-
 .followers-nogara{
   margin-top: 90px;
 }
-
 .container-tarifas {
-  display: grid;
-  grid-template-columns: repeat(1,1fr);
-  grid-template-rows: 35% 35% 25% 1%;
-  grid-gap: 25px;
   font-size: 25px;
   background-color: #fff;
-  /* padding: 20px; */
-
+  display: grid;
+  grid-gap: 25px;
 }
-
 .cardOne,.cardTwo {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
   padding: 25px;
-}
-
-.cardOne{
-  grid-template-columns: 100%;
 }
 
 .notes{
   padding: 25px;
- 
 }
-
 footer{
   display: flex;
   justify-content: space-between;
@@ -262,6 +219,174 @@ footer > div > img{
   height: 25px;
   align-self: center;
   margin-right: 10px;
+
+}
+
+@media  screen and (min-width: 1282px){
+.header-container{
+  grid-template-columns: 20% 40% 40%;
+}
+.container-caress{
+grid-template-columns: repeat(2,1fr);
+grid-template-rows: repeat(3,1fr);
+}
+.container-caress > div{
+  grid-column: 1/3;
+  justify-self: center;
+  align-self: center;
+}
+.container-caress > div > h2{
+  text-align: center;
+}
+
+div.container-subtitles{
+  width: 500px;
+}
+
+div.container-media-caress{
+  grid-column: 1/3;
+  grid-row: 2/4;
+  justify-self:unset;
+}
+
+
+.container-tarifas{
+  grid-template-columns: repeat(1,1fr);
+  grid-template-rows: 35% 35% 25% 1%;
+}
+
+.cardOne,.cardTwo {
+  grid-template-columns: repeat(2,1fr);
+}
+
+.cardOne{
+  grid-template-columns: 100%;
+}
+}
+@media screen and (min-width: 1050px) and (max-width:1281px){
+  .header-container{
+    grid-template-columns: 20% 40% 40%;
+  }
+  .container-caress{
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+  justify-self: end;
+}
+.container-caress > div{
+  grid-column: 1/3;
+  justify-self: center;
+  align-self: center;
+}
+.container-caress > div > h2{
+  text-align: center;
+}
+
+div.container-subtitles > span:nth-child(1){
+  margin-right: 25px;
+
+}
+div.container-media-caress{
+  grid-column: 1/3;
+  grid-row: 2/4;
+  justify-self:unset;
+
+}
+
+div.container-media-nogara{
+  justify-self: end;
+  margin-right: 40px;
+}
+
+
+}
+@media screen and (min-width: 650px) and (max-width:1050px){
+.header-container{
+  grid-template-columns:  100%;
+  justify-items: center;
+}
+.container-caress{
+grid-template-columns: repeat(2,1fr);
+grid-template-rows: repeat(3,1fr);
+
+}
+.container-caress > div{
+  grid-column: 1/3;
+  justify-self: center;
+  align-self: center;
+}
+.container-caress > div > h2{
+  text-align: center;
+}
+
+div.container-subtitles > span:nth-child(1){
+  margin-right: 25px;
+
+}
+div.container-media-caress{
+  grid-column: 1/3;
+  grid-row: 2/4;
+  justify-self:unset;
+}
+.container-media-nogara{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.followers-nogara{
+  margin-top: 0px;
+}
+footer{
+  font-size: 15.5px;
+}
+}
+@media screen and (max-width:649px){
+.header-container{
+  grid-template-columns:  100%;
+  justify-items: center;
+}
+.container-caress{
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+
+}
+.container-caress > div{
+  grid-column: 1/3;
+  justify-self: center;
+  align-self: center;
+}
+.container-caress > div > h2{
+  text-align: center;
+}
+
+.logoCaress{
+  width: 150px;
+  height: 150px;
+}
+
+div.container-subtitles > span:nth-child(1){
+  margin-right: 25px;
+
+}
+div.container-media-caress{
+  grid-column: 1/3;
+  grid-row: 2/4;
+  justify-self:unset;
+}
+.container-media-nogara{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.followers-nogara{
+  margin-top: 0px;
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
 }
 
 </style>

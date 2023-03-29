@@ -4,26 +4,30 @@
   import { RouterView , RouterLink} from 'vue-router';
   const user = userStore()
   const superUser = 'xhKPq6Yc9SSgbabjKm6fFQXWIau2'
+
+  const screen = window.screen.width
 </script>
 
 
 <template>
-  <header class="header" v-if="user.userData "> 
-    <div class="logo">
-      <img src="./assets/media/dc_marca_sn_1200.png" alt="">
-    </div>
-    <nav >
-      <div class="nav-links">
-        <div><RouterLink to='/'>Home</RouterLink></div>
-        <div><RouterLink to='/register' v-if="user.userData.uid === superUser">Registrar</RouterLink></div>
-        <button class="btn" @click="user.logOutUser">Logout</button>
+  <header class="header">
+    <div class="container-nav" v-if="user.userData "> 
+      <div class="logo">
+        <img src="./assets/media/dc_marca_sn_1200.png" alt="">
       </div>
-    </nav>
+      <nav class="nav-content">
+        <div class="nav-links">
+          <div><RouterLink to='/'>Home</RouterLink></div>
+          <div><RouterLink to='/register' v-if="user.userData.uid === superUser">Registrar</RouterLink></div>
+          <button class="btn" @click="user.logOutUser">Logout</button>
+        </div>
+      </nav>
+    </div>
   </header>
-  <router-view></router-view>
+    <router-view></router-view>
 </template>
 
-<style>
+<style >
 body{
   margin: 0;
   padding: 2em 30em;
@@ -33,7 +37,7 @@ body{
   
 }
 
-.header{
+.container-nav{
     background-color: #1b3039;
     display: flex;
     justify-content: flex-end;
@@ -42,54 +46,54 @@ body{
     padding: 5px 10%;
 }
 
-.header .logo{
+.container-nav .logo{
     order: 3;
     margin-left: auto;
 }
 
-.header .logo img{
+.container-nav .logo img{
     height: 70px;
     width: auto;
     transition: all 0.3s;
 }
 
-.header .logo img:hover{
+.container-nav .logo img:hover{
     transform: scale(1.2);
 }
 
-.header nav{
+.container-nav nav{
     order: 1;
 }
 
-.header .nav-links{
+.container-nav .nav-links{
     list-style: none;
 }
 
-.header .nav-links div{
+.container-nav .nav-links div{
     display: inline-block;
     padding: 0 20px;    
 }
 
-.header .nav-links div:nth-child(1){
+.container-nav .nav-links div:nth-child(1){
     padding: 0 20px 0 0;
 }
 
-.header .nav-links div:hover{
+.container-nav .nav-links div:hover{
     transform: scale(1.1);
 }
 
-.header .nav-links a{
+.container-nav .nav-links a{
     font-size: 30px;
     color: #eceff1;
     text-decoration: none;    
     margin-left: 20px;
 }
 
-.header .btn{
+.container-nav .btn{
     order: 2;
 }
 
-.header .btn {
+.container-nav .btn {
     margin-left: 20px;
     font-weight: 700;
     color: #1b3039;
@@ -101,11 +105,50 @@ body{
     transition: all 0.3s ease 0s;
 }
 
-.header .btn:hover{
+.container-nav .btn:hover{
     background-color: #e2f1f8;
     color: red;
     transform: scale(1.1);
 }
 
+@media  screen and  (max-width:1780px) {
+  body{
+    padding: 2em 10em;
+  }
+}
+@media  screen and  (max-width:649px) {
+  body{
+    padding: 1em .5em;
+  }
+}
+@media  screen and  (max-width:900px) {
+  .logo{
+    display: none;
+  }
+  .container-nav{
+    justify-content: center;
+  }
+  .container-nav .nav-links a{
+    font-size: 20px;
+  }
+}
+@media  screen and  (max-width:710px) {
+  .header{
+    background-color: #020202;
+  
+  }
+  .container-nav{
+    width: auto;
+    height: 80px; 
+    position: relative;
+    
+  }
+  
+  .nav-content{
+    position: absolute;
+    left: 0;
+  }
+
+}
 
 </style>

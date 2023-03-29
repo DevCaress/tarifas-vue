@@ -54,6 +54,7 @@ const handelSubmit = async () =>{
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
+  border-radius: 10%;
 }
 
 .login-box .avatar {
